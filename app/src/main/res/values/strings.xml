@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ListaCompra</string>
+    <string name="titulo">Lista de la Compra</string>
+    <string name="hint_articulo">Artículo</string>
+    <string name="hint_precio">Precio</string>
+    <string name="btn_add">Añadir</string>
+    <string name="btn_send">Enviar</string>
+    <string name="btn_volver">Volver</string>
+</resources>
