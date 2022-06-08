@@ -11,17 +11,22 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         b = ActivityResultBinding.inflate(layoutInflater)
         setContentView(b.root)
+
+
         b.tvLista.text = "LISTA\n\n"
-        val myExtras = intent.extras
+        var total = 0.0
+        val myExtras = intent.extras //<- Extras devuelve clave + su valor (k,v)
         if (myExtras != null){
-            val keys = myExtras.keySet()
-            for (key in keys){
-                b.tvLista.text = b.tvLista.text.toString()
-                    .plus("$key:\t\t\t${myExtras.get(key)}\n")
+            val claves = myExtras.keySet() //<- keySet() Te devuelve todas las claves (k)
+            for (key in claves){
+                b.tvLista.text = b.tvLista.text.toString().plus("$key:\t\t\t${myExtras.get(key)}\n")
+                total += myExtras.get(key).toString().toDouble()
             }
+            b.tvLista.text = b.tvLista.text.toString().plus("\n\nTotal: $total")
         }
         b.btnVolver.setOnClickListener {
             onBackPressed()
+
         }
 
     }
